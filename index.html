@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Board Designer</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script defer type="text/javascript" src="index.js"></script>
+</head>
+<body>
+  <header>
+    <h3>End Grain Cutting Board Designer</h3>
+  </header>
+    <div id="board-builder">
+        <form id="board-specs">
+            <h4>Input Board Specs</h4>
+            <label for="xDim">X Dimension: </label>
+            <input type="number" name="xDim" id="xDim"/><br/><br/>
+            <label for="yDim">Y Dimension: </label>
+            <input type="number" name="yDim" id="yDim"/><br/><br/>
+            <div class="dropdown"> 
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu">
+                  <button class="dropdown-item" type="button">Maple</a>
+                  <button class="dropdown-item" type="button">Cherry</a>
+                  <button class="dropdown-item" type="button">Walnut</a>
+                  <button class="dropdown-item" type="button">Pine</a>
+                  <button class="dropdown-item" type="button">Purple Heart</a>
+                </div>
+              </div>
+            <input type="submit" value="Submit" />
+        </form>
+        <div id="board-render"> 
+        </div>
+    </div>
+</body>
+</html>
