@@ -127,6 +127,7 @@ let checkerMarker = 0
 function renderBoard(xDim, yDim) {
         console.log(radiusValue)
         let boardSpan = document.getElementById("board-render")  
+        boardSpan.style["border-radius"] = `${radiusValue}px`
         while (boardSpan.firstChild) { // this clears the render if you resubmit
             boardSpan.removeChild(boardSpan.firstChild)
         }  

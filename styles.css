@@ -37,7 +37,7 @@ canvas {
 #board-render{
     margin: 10px;
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 0px;
     overflow: hidden;
 }
 
