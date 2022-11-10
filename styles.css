@@ -25,6 +25,7 @@ body {
 
 .btn-secondary {
     margin: 5px;
+    width: 55%
 }
 
 canvas {
@@ -40,6 +41,7 @@ canvas {
     border-radius: 0px;
     overflow: hidden;
     box-shadow: 10px 10px 5px lightgrey;
+    position: absolute;
 }
 
 #column {

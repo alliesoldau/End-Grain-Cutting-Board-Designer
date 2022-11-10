@@ -134,6 +134,7 @@ function renderBoard(xDim, yDim) {
         for (let x = 1; x <= xDim; x++) { // create the checker and change the color depending on wood chosen
             let newColumn = document.createElement("div")
             newColumn.id = "column"
+            // MAKE THE SQUARE DIMS MODIFIABLE
             for (let y = 1; y <= yDim; y++) {
                 let square = document.createElement("canvas")
                 if (checkerMarker % 2 === 1) {
