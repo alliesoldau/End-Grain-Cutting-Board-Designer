@@ -3,16 +3,29 @@ body {
     padding-top: 10px;
 }
 
-#square1 {
-    width: 50px;
-    height: 50px;
-    background-color: black;
+#dropdownMenuButton {
+    margin: 5px;
+    padding: 5px;
 }
 
-#square2 {
+.btn-secondary {
+    margin: 5px;
+}
+
+canvas {
     width: 50px;
     height: 50px;
-    background-color: pink;
+    display: block;
 }
+
+#board-render{
+    margin: 10px;
+}
+
+#column {
+    display: inline-block;
+}
+
+
 
 

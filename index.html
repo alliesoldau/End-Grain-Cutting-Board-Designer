@@ -21,19 +21,34 @@
             <input type="number" name="xDim" id="xDim"/><br/><br/>
             <label for="yDim">Y Dimension: </label>
             <input type="number" name="yDim" id="yDim"/><br/><br/>
-            <div class="dropdown"> 
+            <div class="dropdown">  
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                  Dropdown button
+                  Choose 1st wood type
                 </button>
+                <span id="wood1"></span>
                 <div class="dropdown-menu">
-                  <button class="dropdown-item" type="button">Maple</a>
-                  <button class="dropdown-item" type="button">Cherry</a>
-                  <button class="dropdown-item" type="button">Walnut</a>
-                  <button class="dropdown-item" type="button">Pine</a>
-                  <button class="dropdown-item" type="button">Purple Heart</a>
+                  <button class="dropdown-item" type="button" id="maple1">Maple</a>
+                  <button class="dropdown-item" type="button" id="cherry1">Cherry</a>
+                  <button class="dropdown-item" type="button" id="walnut1">Walnut</a>
+                  <button class="dropdown-item" type="button" id="beech1">Beech</a>
+                  <button class="dropdown-item" type="button" id="purpleHeart1">Purple Heart</a>
                 </div>
               </div>
-            <input type="submit" value="Submit" />
+              <div class="dropdown"> 
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                  Choose 2nd wood type
+                </button>
+                <span id="wood2"></span>
+                <div class="dropdown-menu">
+                  <button class="dropdown-item" type="button" id="maple2">Maple</a>
+                  <button class="dropdown-item" type="button" id="cherry2">Cherry</a>
+                  <button class="dropdown-item" type="button" id="walnut2">Walnut</a>
+                  <button class="dropdown-item" type="button" id="beech2">Beech</a>
+                  <button class="dropdown-item" type="button" id="purpleHeart2">Purple Heart</a>
+                </div>
+              </div>
+            <button type="submit" class="btn btn-secondary">Submit</button>
+            <!--<input type="submit" value="Submit" />-->
         </form>
         <div id="board-render"> 
         </div>
