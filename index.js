@@ -129,10 +129,10 @@ function renderBoard(xDim, yDim) {
         while (boardSpan.firstChild) { // this clears the render if you resubmit
             boardSpan.removeChild(boardSpan.firstChild)
         }  
-        for (let x = 0; x < xDim; x++) { // create the checker and change the color depending on wood chosen
+        for (let x = 1; x <= xDim; x++) { // create the checker and change the color depending on wood chosen
             let newColumn = document.createElement("div")
             newColumn.id = "column"
-            for (let y = 0; y < yDim; y++) {
+            for (let y = 1; y <= yDim; y++) {
                 let square = document.createElement("canvas")
                 if (checkerMarker % 2 === 1) {
                 square.id = "square1"
@@ -142,7 +142,9 @@ function renderBoard(xDim, yDim) {
                     square.style["background-image"] = `url(${wood2})`;
                 }
                 newColumn.appendChild(square)
-                checkerMarker++
+                checkerMarker++ // increment the checker to change the wood type in the next square
+                } if (yDim % 2 === 1) { // this makes sure the checker works even if y is odd
+                    checkerMarker++
                 if (x === 0 && y === 0) { // add radii to the outter corner dependant on chosen radius 
                     square.style["border-radius"] = `${radiusValue}px 0px 0px 0px`;
                 } else if (x === 0 &&  y === yDim - 1){
