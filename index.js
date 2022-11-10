@@ -125,6 +125,7 @@ radio3.addEventListener("click", () => {
 // render the checker board image
 let checkerMarker = 0
 function renderBoard(xDim, yDim) {
+        console.log(radiusValue)
         let boardSpan = document.getElementById("board-render")  
         while (boardSpan.firstChild) { // this clears the render if you resubmit
             boardSpan.removeChild(boardSpan.firstChild)
@@ -145,20 +146,10 @@ function renderBoard(xDim, yDim) {
                 checkerMarker++ // increment the checker to change the wood type in the next square
                 } if (yDim % 2 === 1) { // this makes sure the checker works even if y is odd
                     checkerMarker++
-                if (x === 0 && y === 0) { // add radii to the outter corner dependant on chosen radius 
-                    square.style["border-radius"] = `${radiusValue}px 0px 0px 0px`;
-                } else if (x === 0 &&  y === yDim - 1){
-                    square.style["border-radius"] = `0px 0px 0px ${radiusValue}px`;
-                } else if (x === xDim - 1 &&  y === 0){
-                    square.style["border-radius"] = `0px ${radiusValue}px 0px 0px`;
+                } 
+                if (xDim % 2 === 0) {
+                    checkerMarker++
                 }
-                else if (x === xDim - 1 && y === yDim - 1) {
-                    square.style["border-radius"] = `0px 0px ${radiusValue}px 0px`;
-                }
-            } 
-            if (xDim % 2 === 0) {
-                checkerMarker++
-            }
             boardSpan.appendChild(newColumn)
         }
     }
