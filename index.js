@@ -1,17 +1,3 @@
-let boardXDim = document.getElementById('xDim')
-let boardYDim = document.getElementById('yDim')
-
-let boardForm = document.getElementById("board-specs")
-boardForm.addEventListener("submit", (e) => {
-    e.preventDefault()
-    boardXDim = e.target.xDim.value
-    boardYDim = e.target.yDim.value
-    if (boardXDim % 2 === 1) {
-        alert("X cannot be odd")
-    } else {
-    renderBoard(boardXDim, boardYDim)
-    }
-})
 
 // declare variables for the name of the wood that was chosen
 let wood1Text = document.getElementById("wood1")
@@ -80,35 +66,92 @@ purpleHeartButton2.addEventListener("click", (e) => {
     wood2Text.innerText = "Purple Heart"
 })
 
+let boardXDim = document.getElementById('xDim')
+let boardYDim = document.getElementById('yDim')
+
+let boardForm = document.getElementById("board-specs")
+boardForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    boardXDim = e.target.xDim.value
+    boardYDim = e.target.yDim.value
+    if (boardYDim <= 0 && boardXDim <= 0) { // make sure dimensions have been chosen
+        alert("Please select postitive board dimensions")
+    } else if (boardYDim <=0) {
+        alert("Please select a positive y dimension")
+    } else if (boardXDim <=0) {
+        alert("Please select a positive x dimension")
+    } else if (boardXDim % 2 === 1) { // make sure the board is not symmetric
+        alert("X cannot be odd")
+    } else if (wood1Text.innerText.length === 0) { // make sure wood types have been chosen
+        if (wood2Text.innerText.length === 0) {
+            alert("Please select your wood types")
+        } else {
+        alert("Please pick your 1st wood type")
+        }
+    } else if (wood2Text.innerText.length === 0) {
+        alert("Please pick your 2nd wood type")
+    } else { 
+    renderBoard(boardXDim, boardYDim) // if it passes all tests, render the board
+    }
+})
+
+let radiusValue = 0 // default to zero radius round over
+
+// check to see if a round over was selected
+let radio0 = document.getElementById("noneRadius")
+radio0.addEventListener("click", () => {
+    radiusValue = 0
+})
+let radio1 = document.getElementById("smallRadius")
+radio1.addEventListener("click", () => {
+    radiusValue = 10
+})
+let radio2 = document.getElementById("mediumRadius")
+radio2.addEventListener("click", () => {
+    radiusValue = 18
+})
+let radio3 = document.getElementById("fullRadius")
+radio3.addEventListener("click", () => {
+    radiusValue = 25
+})
+
 // render the checker board image
-// MAKE SURE THERE IS A CHECK FOR BOTH WOOD TYPES BEING CHOSEN
-// MAKE SURE THERE IS A CHECK FOR THE DIMENSIONS BEING CHOSEN
 let checkerMarker = 0
 function renderBoard(xDim, yDim) {
-    let boardDiv = document.getElementById("board-render")  
-    while (boardDiv.firstChild) { // this clears the render if you resubmit
-        boardDiv.removeChild(boardDiv.firstChild)
-    }  
-    for (let y = 0; y < yDim; y++) { 
-        let newColumn = document.createElement("div")
-        newColumn.id = "column"
-        for (let x = 0; x < xDim; x++) {
-            let square = document.createElement("canvas")
-            if (checkerMarker % 2 === 1) {
-            square.id = "square1"
-            square.style["background-color"] = `${wood1}`;
-            console.log(square)
-            } else {
-                square.id = "square2"
-                square.style["background-color"] = `${wood2}`;
+        let boardSpan = document.getElementById("board-render")  
+        while (boardSpan.firstChild) { // this clears the render if you resubmit
+            boardSpan.removeChild(boardSpan.firstChild)
+        }  
+        for (let x = 0; x < xDim; x++) { // create the checker and change the color depending on wood chosen
+            let newColumn = document.createElement("div")
+            newColumn.id = "column"
+            for (let y = 0; y < yDim; y++) {
+                let square = document.createElement("canvas")
+                if (checkerMarker % 2 === 1) {
+                square.id = "square1"
+                square.style["background-color"] = `${wood1}`;
+                } else {
+                    square.id = "square2"
+                    square.style["background-color"] = `${wood2}`;
+                }
+                newColumn.appendChild(square)
+                checkerMarker++
+                if (x === 0 && y === 0) { // add radii to the outter corner dependant on chosen radius 
+                    square.style["border-radius"] = `${radiusValue}px 0px 0px 0px`;
+                } else if (x === 0 &&  y === yDim - 1){
+                    square.style["border-radius"] = `0px 0px 0px ${radiusValue}px`;
+                } else if (x === xDim - 1 &&  y === 0){
+                    square.style["border-radius"] = `0px ${radiusValue}px 0px 0px`;
+                }
+                else if (x === xDim - 1 && y === yDim - 1) {
+                    square.style["border-radius"] = `0px 0px ${radiusValue}px 0px`;
+                }
+            } 
+            if (xDim % 2 === 0) {
+                checkerMarker++
             }
-            newColumn.appendChild(square)
-            checkerMarker++
+            boardSpan.appendChild(newColumn)
         }
-        if (xDim % 2 === 0) {
-            checkerMarker++
-        }
-        boardDiv.appendChild(newColumn)
     }
-}
+
 

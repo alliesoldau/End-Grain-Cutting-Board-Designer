@@ -3,9 +3,24 @@ body {
     padding-top: 10px;
 }
 
+.container {
+    display: inline-block;
+}
+
+#board-specs {
+    display: inline-block;
+    border: solid 2px black;
+    margin: 10px;
+    padding: 10px;
+}
+
 #dropdownMenuButton {
     margin: 5px;
     padding: 5px;
+}
+
+.btn-primary {
+    margin: 5px;
 }
 
 .btn-secondary {
@@ -20,12 +35,13 @@ canvas {
 
 #board-render{
     margin: 10px;
+    display: inline-block;
 }
 
 #column {
     display: inline-block;
 }
 
-
-
-
+#test {
+    background-image: url("images/black-walnut-endgrain-zoom.jpg");
+}

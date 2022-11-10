@@ -14,7 +14,8 @@
   <header>
     <h3>End Grain Cutting Board Designer</h3>
   </header>
-    <div id="board-builder">
+  <div class="container">
+    <span id="board-builder">
         <form id="board-specs">
             <h4>Input Board Specs</h4>
             <label for="xDim">X Dimension: </label>
@@ -47,11 +48,31 @@
                   <button class="dropdown-item" type="button" id="purpleHeart2">Purple Heart</a>
                 </div>
               </div>
-            <button type="submit" class="btn btn-secondary">Submit</button>
-            <!--<input type="submit" value="Submit" />-->
+              <label for="radius">Select a round over: </label>
+              <div class="form-check" id="radiusSelector">
+                <input type="radio" class="form-check-input" id="noneRadius" name="optradio" value="option1" checked>None
+                <label class="form-check-label" for="radio0"></label>
+              </div>
+              <div class="form-check" id="radiusSelector">
+                <input type="radio" class="form-check-input" id="smallRadius" name="optradio" value="option1">Small
+                <label class="form-check-label" for="radio1"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" id="mediumRadius" name="optradio" value="option2">Medium
+                <label class="form-check-label" for="radio2"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" id="fullRadius" name="optradio" value="option3">Full
+                <label class="form-check-label"></label>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div id="board-render"> 
-        </div>
+        <span id="board-render">
+          <div id="test">
+            <h1>poop</h1>
+          </div>
+        </span>
+      </span>
     </div>
 </body>
 </html>
