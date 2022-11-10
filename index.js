@@ -3,66 +3,73 @@
 let wood1Text = document.getElementById("wood1")
 let wood2Text = document.getElementById("wood2")
 
-// Drop down button1 event listeners --> changes wood color
+// define endgrain image routes
+let maple = "images/maple-endgrain.jpg" // image source: https://woodgears.ca/wood_grain/hardwood.html
+let cherry = "images/cherry-endgrain.png" // image source: https://butcherblockco.com/product/boos-sample-cherry-end-grain
+let walnut = "images/walnut-endgrain.png" // image source: https://www.wood-database.com/black-walnut/
+let beech = "images/beech-endgrain.jpg"  // image source: https://mlp.arboretum.purdue.edu/weboi/oecgi3.exe/INET_ECM_DispFeat?FEATCODE=FNR-BEECH&TOURMODE=0#.Y2znBuzMJJU
+let purpleHeart = "images/purpleheart-endgrain.jpg" // image source: https://exotichardwoodsukltd.com/product/purpleheart-lumber-48-x-6-x-2/
+
+// drop down button1 event listeners --> changes wood color
 let mapleButton1 = document.getElementById("maple1")
 mapleButton1.addEventListener("click", (e) => { 
     e.preventDefault()
-    wood1 = "#ded0c1"
+    wood1 = maple
     wood1Text.innerText = "Maple"
 })
 let cherryButton1 = document.getElementById("cherry1")
 cherryButton1.addEventListener("click", (e) => { 
     e.preventDefault()
-    wood1 = "#6A1616"
+    wood1 = cherry
     wood1Text.innerText = "Cherry"
 })
 let walnutButton1 = document.getElementById("walnut1")
 walnutButton1.addEventListener("click", (e) => { 
     e.preventDefault()
-    wood1 = "#773f1a"
+    wood1 = walnut
     wood1Text.innerText = "Walnut"
 })
 let beechButton1 = document.getElementById("beech1")
 beechButton1.addEventListener("click", (e) => { 
     e.preventDefault()
-    wood1 = "#dd8a3c"
+    wood1 = beech
     wood1Text.innerText = "Beech"
 })
 let purpleHeartButton1 = document.getElementById("purpleHeart1")
 purpleHeartButton1.addEventListener("click", (e) => { 
     e.preventDefault()
-    wood1 = "#8d515f"
+    wood1 = purpleHeart
     wood1Text.innerText = "Purple Heart"
 })
-// Drop down button2 event listeners --> changes wood color
+// drop down button2 event listeners --> changes wood color
 let mapleButton2 = document.getElementById("maple2")
 mapleButton2.addEventListener("click", (e) => { 
     e.preventDefault()
-    wood2 = "#ded0c1"
+    wood2 = maple
     wood2Text.innerText = "Maple"
 })
 let cherryButton2 = document.getElementById("cherry2")
 cherryButton2.addEventListener("click", (e) => { 
     e.preventDefault()
-    wood2 = "#6A1616"
+    wood2 = cherry
     wood2Text.innerText = "Cherry"
 })
 let walnutButton2 = document.getElementById("walnut2")
 walnutButton2.addEventListener("click", (e) => { 
     e.preventDefault()
-    wood2 = "#773f1a"
+    wood2 = walnut
     wood2Text.innerText = "Walnut"
 })
 let beechButton2 = document.getElementById("beech2")
 beechButton2.addEventListener("click", (e) => { 
     e.preventDefault()
-    wood2 = "#dd8a3c"
+    wood2 = beech
     wood2Text.innerText = "Beech"
 })
 let purpleHeartButton2 = document.getElementById("purpleHeart2")
 purpleHeartButton2.addEventListener("click", (e) => { 
     e.preventDefault()
-    wood2 = "#8d515f"
+    wood2 = purpleHeart
     wood2Text.innerText = "Purple Heart"
 })
 
@@ -129,10 +136,10 @@ function renderBoard(xDim, yDim) {
                 let square = document.createElement("canvas")
                 if (checkerMarker % 2 === 1) {
                 square.id = "square1"
-                square.style["background-color"] = `${wood1}`;
+                square.style["background-image"] = `url(${wood1})`;
                 } else {
                     square.id = "square2"
-                    square.style["background-color"] = `${wood2}`;
+                    square.style["background-image"] = `url(${wood2})`;
                 }
                 newColumn.appendChild(square)
                 checkerMarker++
