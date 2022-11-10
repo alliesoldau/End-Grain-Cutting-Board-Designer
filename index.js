@@ -141,7 +141,7 @@ function renderBoard(xDim, yDim) {
                 } else {
                     square.id = "square2"
                     square.style["background-image"] = `url(${wood2})`;
-                }
+                } 
                 newColumn.appendChild(square)
                 checkerMarker++ // increment the checker to change the wood type in the next square
                 } if (yDim % 2 === 1) { // this makes sure the checker works even if y is odd

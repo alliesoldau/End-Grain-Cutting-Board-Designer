@@ -37,9 +37,12 @@ canvas {
 #board-render{
     margin: 10px;
     display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 #column {
     display: inline-block;
+    vertical-align: bottom;
 }
 
