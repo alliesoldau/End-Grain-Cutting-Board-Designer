@@ -116,11 +116,11 @@ boardForm.addEventListener("submit", (e) => {
     if (boardYDim <= 0 && boardXDim <= 0) { // make sure dimensions have been chosen
         alert("Please select postitive board dimensions")
     } else if (boardYDim <=0) {
-        alert("Please select a positive y dimension")
+        alert("Please select a positive 'Rows' dimension")
     } else if (boardXDim <=0) {
-        alert("Please select a positive x dimension")
+        alert("Please select a positive 'Columns' dimension")
     } else if (boardXDim % 2 === 1) { // make sure the board is not symmetric
-        alert("X cannot be odd")
+        alert("'Columns' cannot be odd")
     } else if (wood1Text.innerText.length === 0) { // make sure wood types have been chosen
         if (wood2Text.innerText.length === 0) {
             alert("Please select your wood types")

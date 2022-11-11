@@ -30,15 +30,15 @@
               <div class="form-group" id="rectDimensions">  
                 <p id="tableForm">
                   <label for="xDim" id="tableCell">Rect. width: </label>
-                  <input type="number" name="rectWidth" placeholder="inches" id="rectWidth"/><br/>
+                  <input type="number" name="rectWidth" placeholder="inches" min="0" step=".01" id="rectWidth"/><br/>
                 </p>
                 <p id="tableForm">
                   <label for="yDim" id="tableCell">Rect. height: </label>
-                  <input type="number" name="rectHeight" placeholder="inches" id="rectHeight"/><br/>
+                  <input type="number" name="rectHeight" placeholder="inches" min="0" step=".01" id="rectHeight"/><br/>
                 </p>
                 <p id="tableForm">
                   <label for="thickness" id="tableCell">Thickness: </label>
-                  <input type="number" name="thickness" placeholder="inches" id="thickness"/><br/>
+                  <input type="number" name="thickness" placeholder="inches" min="0" step=".01" id="thickness"/><br/>
                 </p>
               </div>
             <div class="dropdown">  
@@ -95,12 +95,16 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <div id="bananaBoard">
-          <h3 id = "endGrainTitle"></h3>
+          <div class="box">
+          <h5 id = "endGrainTitle"></h5>
           <div id="board-render"></div>
           <img id="banana" src="images/banana.png"></img>
         </div>
-        <h3 id="faceGrainTitle"></h3>
+        </div>
+        <div class="box">
+        <h5 id="faceGrainTitle"></h5>
         <div id="thickness-render"></div>
+      </div>
     </div>
 </body>
 </html>
