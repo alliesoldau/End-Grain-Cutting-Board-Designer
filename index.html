@@ -19,25 +19,25 @@
             <h4>Input Board Specs</h4>
               <div class="form-group" id="rowsAndColumns">
                 <p id="tableForm">
-                  <label for="xDim" id="tableCell">Columns: </label>
+                  <label for="xDim" id="tableCell"><strong>Columns: </strong></label>
                   <input type="number" name="xDim" id="xDim"/><br/>
                 </p>
                 <p id="tableForm">
-                  <label for="yDim" id="tableCell">Rows: </label>
+                  <label for="yDim" id="tableCell"><strong>Rows: </strong></label>
                   <input type="number" name="yDim" id="yDim"/><br/>
                 </p>
                 </div>
               <div class="form-group" id="rectDimensions">  
                 <p id="tableForm">
-                  <label for="xDim" id="tableCell">Rect. width: </label>
+                  <label for="xDim" id="tableCell"><strong>Rect. width: </strong></label>
                   <input type="number" name="rectWidth" placeholder="inches" min="0" step=".01" id="rectWidth"/><br/>
                 </p>
                 <p id="tableForm">
-                  <label for="yDim" id="tableCell">Rect. height: </label>
+                  <label for="yDim" id="tableCell"><strong>Rect. height: </strong></label>
                   <input type="number" name="rectHeight" placeholder="inches" min="0" step=".01" id="rectHeight"/><br/>
                 </p>
                 <p id="tableForm">
-                  <label for="thickness" id="tableCell">Thickness: </label>
+                  <label for="thickness" id="tableCell"><strong>Thickness: </strong></label>
                   <input type="number" name="thickness" placeholder="inches" min="0" step=".01" id="thickness"/><br/>
                 </p>
               </div>
@@ -68,41 +68,23 @@
                 </div>
               </div>
               <br>
-              <!-- GETTING RID OF ROUND OVER FOR NOW
-              <label for="radius">Select a round over: </label>
-              <div class="form-check" id="radiusSelector">
-                <input type="radio" class="form-check-input" id="noneRadius" name="optradio" value="option1" checked>None
-                <label class="form-check-label" for="radio0"></label>
-              </div>
-              <div class="form-check" id="radiusSelector">
-                <input type="radio" class="form-check-input" id="smallRadius" name="optradio" value="option1">Small
-                <label class="form-check-label" for="radio1"></label>
-              </div>
-              <div class="form-check">
-                <input type="radio" class="form-check-input" id="mediumRadius" name="optradio" value="option2">Medium
-                <label class="form-check-label" for="radio2"></label>
-              </div>
-              <div class="form-check">
-                <input type="radio" class="form-check-input" id="fullRadius" name="optradio" value="option3">Full
-                <label class="form-check-label"></label>
-              </div> -->
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
-                  Banana for scale?
+                  <strong>Banana for scale?</strong>
                 </label>
               </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <div id="bananaBoard">
           <div class="box">
-          <h5 id = "endGrainTitle"></h5>
+          <h6 id = "endGrainTitle"></h6>
           <div id="board-render"></div>
           <img id="banana" src="images/banana.png"></img>
         </div>
         </div>
         <div class="box">
-        <h5 id="faceGrainTitle"></h5>
+        <h6 id="faceGrainTitle"></h6>
         <div id="thickness-render"></div>
       </div>
     </div>

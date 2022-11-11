@@ -136,25 +136,6 @@ boardForm.addEventListener("submit", (e) => {
 
 let radiusValue = 5 // default to give radius round over
 
-// check to see if a round over was selected
-// MIGHT GET RID OF ROUND OVER
-// let radio0 = document.getElementById("noneRadius")
-// radio0.addEventListener("click", () => {
-//     radiusValue = 0
-// })
-// let radio1 = document.getElementById("smallRadius")
-// radio1.addEventListener("click", () => {
-//     radiusValue = 10
-// })
-// let radio2 = document.getElementById("mediumRadius")
-// radio2.addEventListener("click", () => {
-//     radiusValue = 18
-// })
-// let radio3 = document.getElementById("fullRadius")
-// radio3.addEventListener("click", () => {
-//     radiusValue = 25
-// })
-
 // banana for scale
 let bananaForScale = document.getElementById("banana")
 let bananaButton = document.getElementById("flexCheckDefault")
@@ -171,7 +152,6 @@ function renderBoard(xDim, yDim) {
         faceGrainH3.innerHTML = "Side View (face grain)"
         thicknessRender(xDim, yDim) // remove the variable you don't need
         let boardSpan = document.getElementById("board-render")
-        // MIGHT GET RID OF VARIABLE ROUND OVER
         boardSpan.style["border-radius"] = `${radiusValue}px`
         while (boardSpan.firstChild) { // this clears the render if you resubmit
             boardSpan.removeChild(boardSpan.firstChild)
