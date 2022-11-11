@@ -68,6 +68,7 @@
                 </div>
               </div>
               <br>
+              <!-- GETTING RID OF ROUND OVER FOR NOW
               <label for="radius">Select a round over: </label>
               <div class="form-check" id="radiusSelector">
                 <input type="radio" class="form-check-input" id="noneRadius" name="optradio" value="option1" checked>None
@@ -84,8 +85,7 @@
               <div class="form-check">
                 <input type="radio" class="form-check-input" id="fullRadius" name="optradio" value="option3">Full
                 <label class="form-check-label"></label>
-              </div>
-              <br>
+              </div> -->
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
@@ -94,9 +94,11 @@
               </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div id="board-render"></div>
-        <img id="banana" src="images/banana.png"></img>
+        <div id="bananaBoard">
+          <div id="board-render"></div>
+          <img id="banana" src="images/banana.png"></img>
+        </div>
+        <div id="thickness-render"></div>
     </div>
-    <div id="thickness-render"></div>
 </body>
 </html>

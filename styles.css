@@ -47,8 +47,7 @@ canvas {
     background-size: cover;
 }
 
-#board-render{
-    margin: 10px;
+#board-render {
     display: inline-block;
     overflow: hidden;
     box-shadow: 10px 10px 5px lightgrey;
@@ -62,17 +61,22 @@ canvas {
 
 #banana {
     /* image source: http://clipart-library.com/clip-art/banana-transparent-png-8.htm" */
-    width: 450px; /* we're saying 50px = 1in, and the average banana is 7.5in, and the image has some blank space on the edges of the banana */
+    width: 375px; /* we're saying 50px = 1in, and the average banana is 7.5in, and the image has some blank space on the edges of the banana */
     height: auto;
     position: absolute; 
     z-index: 2;
     display: none;
+    left: 0px;
+    top: 0px;
 }
 
 #thickness-render {
     z-index: 1;
     display: inline-block;
     box-shadow: 10px 10px 5px lightgrey;
+    margin-left: 15px;
+    overflow: hidden;
+
 
 }
 
@@ -83,6 +87,10 @@ canvas {
     vertical-align: bottom;
 }
 
+#bananaBoard {
+    display: inline-block;
+    position: relative;
+}
 
 
 

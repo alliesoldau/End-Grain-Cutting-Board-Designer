@@ -117,25 +117,26 @@ boardForm.addEventListener("submit", (e) => {
     }
 })
 
-let radiusValue = 0 // default to zero radius round over
+let radiusValue = 5 // default to give radius round over
 
 // check to see if a round over was selected
-let radio0 = document.getElementById("noneRadius")
-radio0.addEventListener("click", () => {
-    radiusValue = 0
-})
-let radio1 = document.getElementById("smallRadius")
-radio1.addEventListener("click", () => {
-    radiusValue = 10
-})
-let radio2 = document.getElementById("mediumRadius")
-radio2.addEventListener("click", () => {
-    radiusValue = 18
-})
-let radio3 = document.getElementById("fullRadius")
-radio3.addEventListener("click", () => {
-    radiusValue = 25
-})
+// MIGHT GET RID OF ROUND OVER
+// let radio0 = document.getElementById("noneRadius")
+// radio0.addEventListener("click", () => {
+//     radiusValue = 0
+// })
+// let radio1 = document.getElementById("smallRadius")
+// radio1.addEventListener("click", () => {
+//     radiusValue = 10
+// })
+// let radio2 = document.getElementById("mediumRadius")
+// radio2.addEventListener("click", () => {
+//     radiusValue = 18
+// })
+// let radio3 = document.getElementById("fullRadius")
+// radio3.addEventListener("click", () => {
+//     radiusValue = 25
+// })
 
 // banana for scale
 let bananaForScale = document.getElementById("banana")
@@ -149,8 +150,7 @@ let checkerMarker = 0
 function renderBoard(xDim, yDim) {
         thicknessRender(xDim, yDim) // remove the variable you don't need
         let boardSpan = document.getElementById("board-render")
-        // THE WAY IM DOING ROUND OVER ISNT REALISTIC. THINK OF MAYBE INSTEAD ADDING A SHADOW FOR 
-        // ROUND OVER BASED ON THE BIT/DEPTH
+        // MIGHT GET RID OF VARIABLE ROUND OVER
         boardSpan.style["border-radius"] = `${radiusValue}px`
         while (boardSpan.firstChild) { // this clears the render if you resubmit
             boardSpan.removeChild(boardSpan.firstChild)
@@ -194,7 +194,7 @@ function renderBoard(xDim, yDim) {
 function thicknessRender(xDim, yDim) {
     let thicknessCheckerMarker = 0
     let thicknessDiv = document.getElementById("thickness-render")
-    let thicknessSquare = document.createElement("canvas")
+    thicknessDiv.style["border-radius"] = `${radiusValue}px`
     while (thicknessDiv.firstChild) { // this clears the render if you resubmit
         thicknessDiv.removeChild(thicknessDiv.firstChild)
     }
@@ -207,11 +207,11 @@ function thicknessRender(xDim, yDim) {
         thicknessSquare.style.height = `${thicknessHeight}px`
         // I had to flip wood 1 and wood 2 here to get it to render correctly... idk why
         if (thicknessCheckerMarker % 2 === 1) {
-        thicknessSquare.id = "square2"
-        thicknessSquare.style["background-image"] = `url(${wood2})`;
+        thicknessSquare.id = "square1"
+        thicknessSquare.style["background-image"] = `url(${wood1})`;
         } else {
-            thicknessSquare.id = "square1"
-            thicknessSquare.style["background-image"] = `url(${wood1})`;
+            thicknessSquare.id = "square2"
+            thicknessSquare.style["background-image"] = `url(${wood2})`;
         } 
         thicknessDiv.appendChild(thicknessSquare)
         thicknessCheckerMarker++ 
