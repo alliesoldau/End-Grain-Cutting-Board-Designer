@@ -2,6 +2,9 @@
 // declare variables for the name of the wood that was chosen
 let wood1Text = document.getElementById("wood1")
 let wood2Text = document.getElementById("wood2")
+let wood1Face;
+let wood2Face;
+
 
 // define endgrain image routes
 let maple = "images/maple-endgrain.jpg" // image source: https://woodgears.ca/wood_grain/hardwood.html
@@ -9,36 +12,45 @@ let cherry = "images/cherry-endgrain.png" // image source: https://butcherblockc
 let walnut = "images/walnut-endgrain.png" // image source: https://www.wood-database.com/black-walnut/
 let beech = "images/beech-endgrain.jpg"  // image source: https://mlp.arboretum.purdue.edu/weboi/oecgi3.exe/INET_ECM_DispFeat?FEATCODE=FNR-BEECH&TOURMODE=0#.Y2znBuzMJJU
 let purpleHeart = "images/purpleheart-endgrain.jpg" // image source: https://exotichardwoodsukltd.com/product/purpleheart-lumber-48-x-6-x-2/
-
+let mapleFace = "images/maple-facegrain.png" // image source: https://img.hunkercdn.com/1260x/photos.demandstudios.com/getty/article/83/72/139397746.jpg?type=webp
+let cherryFace = "images/cherry-facegrain.png" // image source: https://buy.advantagelumber.com/products/8-4-brazilian-cherry-lumber-fl?currency=USD&utm_medium=cpc&utm_source=google&utm_campaign=Google%20Shopping&gclid=Cj0KCQiAgribBhDkARIsAASA5bvXc_JVKRgNCwbXJDev0NQn1QJ9zSkPNI_pnc5JzoeYuyY82Yx7UuMaAg67EALw_wcB&variant=31529701113898
+let walnutFace = "images/walnut-facegrain.jpg" // image source: https://m.media-amazon.com/images/I/511rz9i92dL._AC_.jpg
+let beechFace = "images/beech-facegrain.jpg" // image source: https://www.wood-database.com/wp-content/uploads/fagus-sylvatica.jpg
+let purpleHeartFace = "images/purpleheart-facegrain.png" // image source: https://www.wood-database.com/purpleheart/
 // drop down button1 event listeners --> changes wood color
 let mapleButton1 = document.getElementById("maple1")
 mapleButton1.addEventListener("click", (e) => { 
     e.preventDefault()
     wood1 = maple
+    wood1Face = mapleFace
     wood1Text.innerText = "Maple"
 })
 let cherryButton1 = document.getElementById("cherry1")
 cherryButton1.addEventListener("click", (e) => { 
     e.preventDefault()
     wood1 = cherry
+    wood1Face = cherryFace
     wood1Text.innerText = "Cherry"
 })
 let walnutButton1 = document.getElementById("walnut1")
 walnutButton1.addEventListener("click", (e) => { 
     e.preventDefault()
     wood1 = walnut
+    wood1Face = walnutFace
     wood1Text.innerText = "Walnut"
 })
 let beechButton1 = document.getElementById("beech1")
 beechButton1.addEventListener("click", (e) => { 
     e.preventDefault()
     wood1 = beech
+    wood1Face = beechFace
     wood1Text.innerText = "Beech"
 })
 let purpleHeartButton1 = document.getElementById("purpleHeart1")
 purpleHeartButton1.addEventListener("click", (e) => { 
     e.preventDefault()
     wood1 = purpleHeart
+    wood1Face = purpleHeartFace
     wood1Text.innerText = "Purple Heart"
 })
 // drop down button2 event listeners --> changes wood color
@@ -46,30 +58,35 @@ let mapleButton2 = document.getElementById("maple2")
 mapleButton2.addEventListener("click", (e) => { 
     e.preventDefault()
     wood2 = maple
+    wood2Face = mapleFace
     wood2Text.innerText = "Maple"
 })
 let cherryButton2 = document.getElementById("cherry2")
 cherryButton2.addEventListener("click", (e) => { 
     e.preventDefault()
     wood2 = cherry
+    wood2Face = cherryFace
     wood2Text.innerText = "Cherry"
 })
 let walnutButton2 = document.getElementById("walnut2")
 walnutButton2.addEventListener("click", (e) => { 
     e.preventDefault()
     wood2 = walnut
+    wood2Face = walnutFace
     wood2Text.innerText = "Walnut"
 })
 let beechButton2 = document.getElementById("beech2")
 beechButton2.addEventListener("click", (e) => { 
     e.preventDefault()
     wood2 = beech
+    wood2Face = beechFace
     wood2Text.innerText = "Beech"
 })
 let purpleHeartButton2 = document.getElementById("purpleHeart2")
 purpleHeartButton2.addEventListener("click", (e) => { 
     e.preventDefault()
     wood2 = purpleHeart
+    wood2Face = purpleHeartFace
     wood2Text.innerText = "Purple Heart"
 })
 
@@ -190,7 +207,6 @@ function renderBoard(xDim, yDim) {
 
 
 // create the thickness render
-
 function thicknessRender(xDim, yDim) {
     let thicknessCheckerMarker = 0
     let thicknessDiv = document.getElementById("thickness-render")
@@ -208,10 +224,10 @@ function thicknessRender(xDim, yDim) {
         // I had to flip wood 1 and wood 2 here to get it to render correctly... idk why
         if (thicknessCheckerMarker % 2 === 1) {
         thicknessSquare.id = "square1"
-        thicknessSquare.style["background-image"] = `url(${wood1})`;
+        thicknessSquare.style["background-image"] = `url(${wood1Face})`;
         } else {
             thicknessSquare.id = "square2"
-            thicknessSquare.style["background-image"] = `url(${wood2})`;
+            thicknessSquare.style["background-image"] = `url(${wood2Face})`;
         } 
         thicknessDiv.appendChild(thicknessSquare)
         thicknessCheckerMarker++ 
