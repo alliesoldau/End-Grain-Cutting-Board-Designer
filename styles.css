@@ -52,7 +52,6 @@ canvas {
     display: inline-block;
     overflow: hidden;
     box-shadow: 10px 10px 5px lightgrey;
-    position: absolute;
     z-index: 1;
 }
 
@@ -71,9 +70,10 @@ canvas {
 }
 
 #thickness-render {
-    display: inline-block;
-    position: absolute;
     z-index: 1;
+    display: inline-block;
+    box-shadow: 10px 10px 5px lightgrey;
+
 }
 
 #thicknessSquare {
