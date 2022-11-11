@@ -163,8 +163,12 @@ bananaButton.addEventListener("click", () => {
     bananaButton.checked != bananaButton.checked })
 
 // render the checker board image
+let endGrainH3 = document.getElementById("endGrainTitle")
+let faceGrainH3 = document.getElementById("faceGrainTitle")
 let checkerMarker = 0
 function renderBoard(xDim, yDim) {
+        endGrainH3.innerHTML = "Top View (end grain)"
+        faceGrainH3.innerHTML = "Side View (face grain)"
         thicknessRender(xDim, yDim) // remove the variable you don't need
         let boardSpan = document.getElementById("board-render")
         // MIGHT GET RID OF VARIABLE ROUND OVER

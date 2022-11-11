@@ -3,6 +3,12 @@ body {
     padding-top: 10px;
 }
 
+/* THE TITLES ARE SHOWING UP FUNNY. I THINK I HAVE TO PLAY AROUND WITH FONT SIZE */
+h3 {
+    display: block;
+    font-size: smaller;
+}
+
 .container {
     display: inline-block;
 }
