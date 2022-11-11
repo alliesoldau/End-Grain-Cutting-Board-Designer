@@ -11,17 +11,13 @@ body {
     display: table;
 }
 
-#rowsForm {
-    display: table-row;
-}
-
-#columnsForm {
+#tableForm {
     display: table-row;
 }
 
 #tableCell {
     display: table-cell;
-    width: 100px;
+    width: 150px;
 }
 
 #board-specs {
@@ -29,11 +25,12 @@ body {
     border: solid 2px black;
     margin: 10px;
     padding: 10px;
+    width: 400px;
 }
 
 #dropdownMenuButton {
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .btn-primary {
@@ -42,23 +39,21 @@ body {
 
 .btn-secondary {
     margin: 5px;
-    width: 55%
+    width: 160px;
 }
 
 canvas {
-    width: 50px;
-    height: 50px;
     display: block;
-    background-size: contain;
+    background-size: cover;
 }
 
 #board-render{
     margin: 10px;
     display: inline-block;
-    border-radius: 0px;
     overflow: hidden;
     box-shadow: 10px 10px 5px lightgrey;
     position: absolute;
+    z-index: 1;
 }
 
 #column {
@@ -68,11 +63,27 @@ canvas {
 
 #banana {
     /* image source: http://clipart-library.com/clip-art/banana-transparent-png-8.htm" */
-    width: 400px; /* we're saying 50px = 1in, and the average banana is 7.5in, and the image has some blank space on the edges of the banana */
+    width: 450px; /* we're saying 50px = 1in, and the average banana is 7.5in, and the image has some blank space on the edges of the banana */
     height: auto;
     position: absolute; 
     z-index: 2;
     display: none;
 }
 
+#thickness-render {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+}
 
+#thicknessSquare {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+
+
+
+  

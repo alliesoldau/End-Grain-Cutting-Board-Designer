@@ -75,12 +75,27 @@ purpleHeartButton2.addEventListener("click", (e) => {
 
 let boardXDim = document.getElementById('xDim')
 let boardYDim = document.getElementById('yDim')
+let rectHeight;
+let rectWidth;
+let thickness;
 
 let boardForm = document.getElementById("board-specs")
 boardForm.addEventListener("submit", (e) => {
     e.preventDefault()
     boardXDim = e.target.xDim.value
     boardYDim = e.target.yDim.value
+    thickness = e.target.thickness.value // this will get passed into the thickness render maker
+    // THE DEAULT VALUE ISNT WORKING. HOW CAN I MAKE IT DEFAULT TO 1 W/O HAVING THE CLICK IN THE FEILD??
+    if (rectWidth !== "") {
+    rectWidth = e.target.rectWidth.value
+    } else {
+        rectWidth = 1; // default to 50px --> 50px will equal 1 inch
+    }
+    if (rectHeight !== "") {
+    rectHeight = e.target.rectHeight.value
+    } else {
+        rectHeight = 1
+    }
     if (boardYDim <= 0 && boardXDim <= 0) { // make sure dimensions have been chosen
         alert("Please select postitive board dimensions")
     } else if (boardYDim <=0) {
@@ -122,6 +137,7 @@ radio3.addEventListener("click", () => {
     radiusValue = 25
 })
 
+// banana for scale
 let bananaForScale = document.getElementById("banana")
 let bananaButton = document.getElementById("flexCheckDefault")
 bananaButton.checked = false
@@ -131,7 +147,8 @@ bananaButton.addEventListener("click", () => {
 // render the checker board image
 let checkerMarker = 0
 function renderBoard(xDim, yDim) {
-        let boardSpan = document.getElementById("board-render")  
+        thicknessRender(xDim, yDim) // remove the variable you don't need
+        let boardSpan = document.getElementById("board-render")
         // THE WAY IM DOING ROUND OVER ISNT REALISTIC. THINK OF MAYBE INSTEAD ADDING A SHADOW FOR 
         // ROUND OVER BASED ON THE BIT/DEPTH
         boardSpan.style["border-radius"] = `${radiusValue}px`
@@ -141,9 +158,13 @@ function renderBoard(xDim, yDim) {
         for (let x = 1; x <= xDim; x++) { // create the checker and change the color depending on wood chosen
             let newColumn = document.createElement("div")
             newColumn.id = "column"
-            // MAKE THE SQUARE DIMS MODIFIABLE
             for (let y = 1; y <= yDim; y++) {
                 let square = document.createElement("canvas")
+                // adjust the squares height and width depending on user input
+                squareWidth = 50 * rectWidth
+                squareHeight = 50 * rectHeight
+                square.style.height = `${squareHeight}px`
+                square.style.width = `${squareWidth}px`
                 if (checkerMarker % 2 === 1) {
                 square.id = "square1"
                 square.style["background-image"] = `url(${wood1})`;
@@ -158,7 +179,7 @@ function renderBoard(xDim, yDim) {
                 } 
                 if (xDim % 2 === 0) {
                     checkerMarker++
-                }
+                }    
             boardSpan.appendChild(newColumn)
         } if (bananaButton.checked === true) {
             bananaForScale.style.display = "inline-block"
@@ -167,4 +188,34 @@ function renderBoard(xDim, yDim) {
         }
     }
 
+
+// create the thickness render
+
+function thicknessRender(xDim, yDim) {
+    let thicknessCheckerMarker = 0
+    let thicknessDiv = document.getElementById("thickness-render")
+    let thicknessSquare = document.createElement("canvas")
+    while (thicknessDiv.firstChild) { // this clears the render if you resubmit
+        thicknessDiv.removeChild(thicknessDiv.firstChild)
+    }
+    for (let y = 1; y <= yDim; y++) {
+        // adjust the squares height and width depending on user input
+        let thicknessSquare = document.createElement("canvas")
+        let thicknessPx = 50 * thickness
+        thicknessHeight = 50 * rectHeight
+        thicknessSquare.style.width = `${thicknessPx}px`
+        thicknessSquare.style.height = `${thicknessHeight}px`
+        // I had to flip wood 1 and wood 2 here to get it to render correctly... idk why
+        if (thicknessCheckerMarker % 2 === 1) {
+        thicknessSquare.id = "square2"
+        thicknessSquare.style["background-image"] = `url(${wood2})`;
+        } else {
+            thicknessSquare.id = "square1"
+            thicknessSquare.style["background-image"] = `url(${wood1})`;
+        } 
+        thicknessDiv.appendChild(thicknessSquare)
+        thicknessCheckerMarker++ 
+    thicknessDiv.append(thicknessSquare)
+    }
+}
 

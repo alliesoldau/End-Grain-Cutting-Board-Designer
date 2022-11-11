@@ -18,13 +18,27 @@
         <form id="board-specs">
             <h4>Input Board Specs</h4>
               <div class="form-group" id="rowsAndColumns">
-                <p id="rowsForm">
-                  <label for="xDim" id="tableCell">Rows: </label>
-                  <input type="number" name="xDim" id="xDim"/><br/><br/>
+                <p id="tableForm">
+                  <label for="xDim" id="tableCell">Columns: </label>
+                  <input type="number" name="xDim" id="xDim"/><br/>
                 </p>
-                <p id="columnsForm">
-                  <label for="yDim" id="tableCell">Columns: </label>
-                  <input type="number" name="yDim" id="yDim"/><br/><br/>
+                <p id="tableForm">
+                  <label for="yDim" id="tableCell">Rows: </label>
+                  <input type="number" name="yDim" id="yDim"/><br/>
+                </p>
+                </div>
+              <div class="form-group" id="rectDimensions">  
+                <p id="tableForm">
+                  <label for="xDim" id="tableCell">Rect. width: </label>
+                  <input type="number" name="rectWidth" placeholder="inches" id="rectWidth"/><br/>
+                </p>
+                <p id="tableForm">
+                  <label for="yDim" id="tableCell">Rect. height: </label>
+                  <input type="number" name="rectHeight" placeholder="inches" id="rectHeight"/><br/>
+                </p>
+                <p id="tableForm">
+                  <label for="thickness" id="tableCell">Thickness: </label>
+                  <input type="number" name="thickness" placeholder="inches" id="thickness"/><br/>
                 </p>
               </div>
             <div class="dropdown">  
@@ -53,6 +67,7 @@
                   <button class="dropdown-item" type="button" id="purpleHeart2">Purple Heart</a>
                 </div>
               </div>
+              <br>
               <label for="radius">Select a round over: </label>
               <div class="form-check" id="radiusSelector">
                 <input type="radio" class="form-check-input" id="noneRadius" name="optradio" value="option1" checked>None
@@ -70,16 +85,18 @@
                 <input type="radio" class="form-check-input" id="fullRadius" name="optradio" value="option3">Full
                 <label class="form-check-label"></label>
               </div>
+              <br>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
-                  Banana For Scale?
+                  Banana for scale?
                 </label>
               </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <div id="board-render"></div>
         <img id="banana" src="images/banana.png"></img>
+        <div id="thickness-render"></div>
     </div>
 </body>
 </html>
