@@ -7,6 +7,23 @@ body {
     display: inline-block;
 }
 
+#rowsAndColumns {
+    display: table;
+}
+
+#rowsForm {
+    display: table-row;
+}
+
+#columnsForm {
+    display: table-row;
+}
+
+#tableCell {
+    display: table-cell;
+    width: 100px;
+}
+
 #board-specs {
     display: inline-block;
     border: solid 2px black;
@@ -51,7 +68,7 @@ canvas {
 
 #banana {
     /* image source: http://clipart-library.com/clip-art/banana-transparent-png-8.htm" */
-    width: 350px; /* we're saying 50px = 1in, and the average banana is 7.5in */
+    width: 400px; /* we're saying 50px = 1in, and the average banana is 7.5in, and the image has some blank space on the edges of the banana */
     height: auto;
     position: absolute; 
     z-index: 2;

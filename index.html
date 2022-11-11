@@ -17,10 +17,16 @@
   <div class="container">
         <form id="board-specs">
             <h4>Input Board Specs</h4>
-            <label for="xDim">X Dimension: </label>
-            <input type="number" name="xDim" id="xDim"/><br/><br/>
-            <label for="yDim">Y Dimension: </label>
-            <input type="number" name="yDim" id="yDim"/><br/><br/>
+              <div class="form-group" id="rowsAndColumns">
+                <p id="rowsForm">
+                  <label for="xDim" id="tableCell">Rows: </label>
+                  <input type="number" name="xDim" id="xDim"/><br/><br/>
+                </p>
+                <p id="columnsForm">
+                  <label for="yDim" id="tableCell">Columns: </label>
+                  <input type="number" name="yDim" id="yDim"/><br/><br/>
+                </p>
+              </div>
             <div class="dropdown">  
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
                   1st wood type
