@@ -49,3 +49,13 @@ canvas {
     vertical-align: bottom;
 }
 
+#banana {
+    /* image source: http://clipart-library.com/clip-art/banana-transparent-png-8.htm" */
+    width: 350px; /* we're saying 50px = 1in, and the average banana is 7.5in */
+    height: auto;
+    position: absolute; 
+    z-index: 2;
+    display: none;
+}
+
+
