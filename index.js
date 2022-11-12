@@ -90,8 +90,8 @@ purpleHeartButton2.addEventListener("click", (e) => {
     wood2Text.innerText = "Purple Heart"
 })
 
-let boardXDim = document.getElementById('xDim')
-let boardYDim = document.getElementById('yDim')
+let boardXDim;
+let boardYDim;
 let rectHeight;
 let rectWidth;
 let thickness;
@@ -132,6 +132,22 @@ boardForm.addEventListener("submit", (e) => {
     } else { 
     renderBoard(boardXDim, boardYDim) // if it passes all tests, render the board
     }
+})
+
+// source board information
+let sBoardMacWidth;
+let sBoardThickness;
+let bladeKerf;
+
+let sBoardForm = document.getElementById("sBoard-specs")
+sBoardForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    sBoardMacWidth = e.target.sBoardWidth.value
+    sBoardThickness = e.target.sBoardThick.value
+    bladeKerf = e.target.bladeKerf.value
+    // console.log(`width: ${sBoardMacWidth}`) 
+    // console.log(`thickness: ${sBoardThickness}`)
+    // console.log(`kerf: ${bladeKerf}`)
 })
 
 let radiusValue = 5 // default to give radius small round over cuz it's pretty

@@ -89,10 +89,12 @@ h6 {
     padding: 10px;
 }
 
-.btn-primary {
+.submit-button {
     margin: 5px;
     font-family: "Monoton", Helvetica, sans-serif;
     letter-spacing: 1px;
+    background-color: #FF8427;
+    border-radius: 25%;
 }
 
 .btn-secondary {
