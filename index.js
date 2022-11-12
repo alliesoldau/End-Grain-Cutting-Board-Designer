@@ -135,20 +135,34 @@ boardForm.addEventListener("submit", (e) => {
 })
 
 // source board information
-let sBoardMacWidth;
+let sBoardMaxWidth;
 let sBoardThickness;
 let bladeKerf;
+let purchaseRecs = document.getElementById("purchaseRecs")
+// let columnsAdjusted 
+// let rowsAdjusted
+// FILL THESE OUT. USE GOOGLE DOC AND ABOVE DEETS. LOTS OF LOGIC NEEDED
+
 
 let sBoardForm = document.getElementById("sBoard-specs")
 sBoardForm.addEventListener("submit", (e) => {
     e.preventDefault()
-    sBoardMacWidth = e.target.sBoardWidth.value
+    sBoardMaxWidth = e.target.sBoardWidth.value
     sBoardThickness = e.target.sBoardThick.value
     bladeKerf = e.target.bladeKerf.value
-    // console.log(`width: ${sBoardMacWidth}`) 
-    // console.log(`thickness: ${sBoardThickness}`)
-    // console.log(`kerf: ${bladeKerf}`)
+    renderMaterialRec()
 })
+
+function renderMaterialRec() {
+    let wood1TableText = document.getElementById("wood1Table")
+    wood1TableText.innerText = wood1Text.innerText
+    let wood2TableText = document.getElementById("wood2Table")
+    wood2TableText.innerText = wood2Text.innerText
+    let width1Table = document.getElementById("width1Table")
+    width1Table.innerText = sBoardMaxWidth
+    let width2Table = document.getElementById("width2Table")
+    width2Table.innerText = sBoardMaxWidth
+}
 
 let radiusValue = 5 // default to give radius small round over cuz it's pretty
 

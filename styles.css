@@ -17,6 +17,7 @@ body {
     padding-top: 10px;
     font-family: "Monoton", Helvetica, sans-serif;
     letter-spacing: 1px;
+    justify-content: left;
 }
 
 h3 {
@@ -39,8 +40,9 @@ h6 {
     margin-left: 15px;
 }
 
-.container {
-    display: inline-block;
+.form-container {
+    display: flex;
+    margin-left: 20px;
 }
 
 #rowsAndColumns {
@@ -56,32 +58,25 @@ h6 {
     width: flex;
 }
 
-#board-specs {
+#board-specs, #sBoard-specs, #purchaseRecs   {
     display: inline-block;
     border: solid 2px #1E212B;
-    margin: 10px;
-    margin-top: 20px;
+    margin: 15px;
     padding: 10px;
-    width: flex;
     vertical-align: top;
-    /* background-image: url('images/graph-paper.png'); image source: https://i.etsystatic.com/33960894/r/il/f56758/3627777072/il_1588xN.3627777072_1gj2.jpg
-    background-size: 450px; */
-    box-shadow: inset 0 0 0 1000px rgb(142, 202, 230, .2);
     text-shadow: 2px 2px white;
 }
 
+#board-specs {
+    box-shadow: inset 0 0 0 1000px rgb(142, 202, 230, .2);
+}
+
 #sBoard-specs {
-    display: inline-block;
-    border: solid 2px #1E212B;
-    margin: 10px;
-    margin-top: 20px;
-    padding: 10px;
-    width: flex;
-    vertical-align: top;
-    /* background-image: url('images/graph-paper.png'); image source: https://i.etsystatic.com/33960894/r/il/f56758/3627777072/il_1588xN.3627777072_1gj2.jpg
-    background-size: 450px; */
     box-shadow: inset 0 0 0 1000px rgb(77, 139, 49, .2);
-    text-shadow: 2px 2px white;
+}
+
+#purchaseRecs {
+    box-shadow: inset 0 0 0 1000px rgb(255, 200, 0, .2);
 }
 
 #dropdownMenuButton {
@@ -95,13 +90,31 @@ h6 {
     letter-spacing: 1px;
     background-color: #FF8427;
     border-radius: 25%;
+    text-shadow: 1px 1px white;
+}
+
+#submitButtomWrapper {
+    position: relative;
+    bottom: 10px;
+    left: 10px;
 }
 
 .btn-secondary {
     margin: 5px;
     width: 170px;
-    font-family: "Monoton", Helvetica, sans-serif;
-    letter-spacing: 1px;
+    font-family: "Monoton", Helvetica, sans-serif !important;
+    letter-spacing: 1px !important;
+    background-color: #1E212B !important; /* adding the !important overrides the bootstrap formatting */
+}
+
+#source-board-div {
+    justify-content: center;
+    display: flex;
+}
+#source-board {
+    width: 400px; 
+    height: auto;
+    border: solid 1.5px #1E212B;
 }
 
 canvas {
@@ -118,6 +131,7 @@ canvas {
 
 .box {
     display: inline-block;
+    margin: 15px;
     margin-top: 20px;
 }
 

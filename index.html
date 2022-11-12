@@ -14,7 +14,7 @@
   <header>
     <h3>End Grain Cutting Board Designer</h3>
   </header>
-  <div class="container">
+  <div class="form-container">
         <form id="board-specs">
             <h4>Board Design</h4>
               <div class="form-group" id="rowsAndColumns">
@@ -74,7 +74,10 @@
                   <strong>Banana for scale?</strong>
                 </label>
               </div>
-              <button type="submit" class="submit-button">Submit</button>
+              <br>
+              <div id="submitButtonWrapper">
+                <button type="submit" class="submit-button">Submit</button>
+              </div>
             </form>
           <form id="sBoard-specs">
             <h4>Source Board Info</h4>
@@ -92,20 +95,61 @@
                   <input type="number" name="bladeKerf" placeholder="inches" min="0" step=".01" id="bladeKerf"/><br/>
                 </p>
               </div>
+              <div id="source-board-div">
+                <img src="images/sourceBoard-infoGraphic.png" id="source-board"> <!-- image source: https://www.acehardware.com/departments/building-supplies/lumber-and-trim/lumber/5072327?store=07874&gclid=Cj0KCQiApb2bBhDYARIsAChHC9vq9RT1C6DKRXMGbqkBafMJ8js-XmAu7mJq49gYhYdi6SJzDnhFeFYaAoHZEALw_wcB&gclsrc=aw.ds -->
+              </div>
+              <br>
+              <div id="submitButtonWrapper">
                 <button type="submit" class="submit-button">Submit</button>
+              </div>
             </form>
-        <div id="bananaBoard">
-          <div class="box">
+            <div id="purchaseRecs">
+              <h4>Source Material Recommendation</h4>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col" id="wood1Table">Wood 1</th>
+                    <th scope="col" id="wood2Table">Wood 2</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Board Width</th>
+                    <td id=width1Table></td>
+                    <td id="width2Table"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Board Thickness</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Board Length</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Number of Boards</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+    </div>
+    <div class="form-container">
+      <div id="bananaBoard">
+        <div class="box">
           <h6 id = "endGrainTitle"></h6>
           <div id="board-render"></div>
           <img id="banana" src="images/banana.png"></img>
         </div>
-        </div>
-        <div class="box">
+      </div>
+      <div class="box">
         <h6 id="faceGrainTitle"></h6>
         <div id="thickness-render"></div>
       </div>
     </div>
-    
-</body>
+  </body>
 </html>
