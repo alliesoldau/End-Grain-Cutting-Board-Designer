@@ -134,7 +134,7 @@ boardForm.addEventListener("submit", (e) => {
     }
 })
 
-let radiusValue = 5 // default to give radius round over
+let radiusValue = 5 // default to give radius small round over cuz it's pretty
 
 // banana for scale
 let bananaForScale = document.getElementById("banana")

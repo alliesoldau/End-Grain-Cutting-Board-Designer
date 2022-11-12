@@ -16,7 +16,7 @@
   </header>
   <div class="container">
         <form id="board-specs">
-            <h4>Input Board Specs</h4>
+            <h4>Board Design</h4>
               <div class="form-group" id="rowsAndColumns">
                 <p id="tableForm">
                   <label for="xDim" id="tableCell"><strong>Columns: </strong></label>
@@ -87,6 +87,24 @@
         <h6 id="faceGrainTitle"></h6>
         <div id="thickness-render"></div>
       </div>
+    </div>
+    <div class="container">
+      <form id="sBoard-specs">
+        <h4>Source Board Info</h4>
+          <div class="form-group" id="rowsAndColumns">
+            <p id="tableForm">
+              <label for="sBoardThick" id="tableCell"><strong>Source Board Thickness: </strong></label>
+              <input type="number" name="sBoardThick" placeholder="inches" min="0" step=".01" id="sBoardThick"/><br/>
+            </p>
+            <p id="tableForm">
+              <label for="sBoardWidth" id="tableCell"><strong>Source Board Max. Width: </strong></label>
+              <input type="number" name="sBoardWidth" placeholder="inches" min="0" step=".01" id="sBoardWidth"/><br/>
+            </p>
+            <p id="tableForm">
+              <label for="bladeKerf" id="tableCell"><strong>Blade Width (Kerf): </strong></label>
+              <input type="number" name="bladeKerf" placeholder="inches" min="0" step=".01" id="bladeKerf"/><br/>
+            </p>
+            </div>
     </div>
 </body>
 </html>
