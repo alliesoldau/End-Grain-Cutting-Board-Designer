@@ -100,6 +100,7 @@ let inputRows;
 let boardForm = document.getElementById("board-specs")
 boardForm.addEventListener("submit", (e) => {
     e.preventDefault()
+    // TODO: UPON SUBMIT RESET WHATEVER WAS IN THE BOARD RENDER AND THEN RESHOW IT IN THE RENDER
     boardXDim = e.target.xDim.value
     boardYDim = e.target.yDim.value
     thickness = e.target.thickness.value // this will get passed into the thickness render maker
@@ -136,7 +137,7 @@ boardForm.addEventListener("submit", (e) => {
     renderBoard(boardXDim, boardYDim) // if it passes all tests, render the board
     }
     // make the source board thickness a readonly value based on the rectangle height
-    let sourceBoardThickness = document.getElementById("sBoardThick")
+    let sourceBoardThickness = document.getElementById("sBoardThickness")
     sourceBoardThickness.placeholder = rectHeight
 })
 

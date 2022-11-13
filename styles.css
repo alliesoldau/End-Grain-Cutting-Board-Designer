@@ -50,7 +50,8 @@ label {
 }
 
 #flexDiv {
-    display: block;
+    display: flex;
+    justify-content: space-between;
 }
 
 #faceGrainTitle {
@@ -137,7 +138,7 @@ label {
     margin: 10px;
 }
 
-#sBoardThick, #sBoardWidth, #bladeKerf, #xDim, #yDim, #rectWidth, #rectHeight, #thickness, #sBoardThick {
+#sBoardThick, #sBoardWidth, #bladeKerf, #xDim, #yDim, #rectWidth, #rectHeight, #thickness, #sBoardThickness {
     width: 25%;
 }
 
