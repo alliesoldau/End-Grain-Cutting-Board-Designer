@@ -95,6 +95,8 @@ let boardYDim;
 let rectHeight;
 let rectWidth;
 let thickness;
+let inputColumns;
+let inputRows;
 
 let boardForm = document.getElementById("board-specs")
 boardForm.addEventListener("submit", (e) => {
@@ -132,6 +134,7 @@ boardForm.addEventListener("submit", (e) => {
     } else { 
     renderBoard(boardXDim, boardYDim) // if it passes all tests, render the board
     }
+  
 })
 
 // source board information
@@ -139,10 +142,7 @@ let sBoardMaxWidth;
 let sBoardThickness;
 let bladeKerf;
 let purchaseRecs = document.getElementById("purchaseRecs")
-// let columnsAdjusted 
-// let rowsAdjusted
 // FILL THESE OUT. USE GOOGLE DOC AND ABOVE DEETS. LOTS OF LOGIC NEEDED
-
 
 let sBoardForm = document.getElementById("sBoard-specs")
 sBoardForm.addEventListener("submit", (e) => {
@@ -150,10 +150,25 @@ sBoardForm.addEventListener("submit", (e) => {
     sBoardMaxWidth = e.target.sBoardWidth.value
     sBoardThickness = e.target.sBoardThick.value
     bladeKerf = e.target.bladeKerf.value
-    renderMaterialRec()
-})
-
-function renderMaterialRec() {
+    let inputColumns = parseInt(boardXDim)
+    let inputRows = parseInt(boardYDim)
+    let columnsAdjusted 
+    let rowsAdjusted
+    // adjust columns and rows
+    if (inputColumns < inputRows) {
+        columnsAdjusted = inputColumns
+        rowsAdjusted = inputRows
+    } else if (inputColumns > inputRows) {
+        columnsAdjusted = boardYDim
+        rowsAdjusted = inputColumns
+    } else if (inputColumns === inputRows) {
+        columnsAdjusted = inputColumns
+        rowsAdjusted = inputRows
+    }
+    // console.log(`inputColumns: ${inputColumns}`)
+    // console.log(`inputRows: ${inputRows}`)
+    // console.log(`columnsAdjusted: ${columnsAdjusted}`)
+    // console.log(`rowsAdjusted: ${rowsAdjusted}`)
     let wood1TableText = document.getElementById("wood1Table")
     wood1TableText.innerText = wood1Text.innerText
     let wood2TableText = document.getElementById("wood2Table")
@@ -162,7 +177,13 @@ function renderMaterialRec() {
     width1Table.innerText = sBoardMaxWidth
     let width2Table = document.getElementById("width2Table")
     width2Table.innerText = sBoardMaxWidth
-}
+    let thickness1Table = document.getElementById("thickness1Table")
+    thickness1Table.innerText = sBoardThickness
+    let thickness2Table = document.getElementById("thickness2Table")
+    thickness2Table.innerText = sBoardThickness
+
+})
+
 
 let radiusValue = 5 // default to give radius small round over cuz it's pretty
 
