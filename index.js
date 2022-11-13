@@ -142,12 +142,13 @@ let sBoardMaxWidth;
 let sBoardThickness;
 let bladeKerf;
 let purchaseRecs = document.getElementById("purchaseRecs")
-// FILL THESE OUT. USE GOOGLE DOC AND ABOVE DEETS. LOTS OF LOGIC NEEDED
 
+// WHEN YOU CHANGE THE BOARD DESIGN THE SOURCE BOARD INFO AND METERIAL RECS NEEDS TO UPDATE AS WELL!!
 let sBoardForm = document.getElementById("sBoard-specs")
 sBoardForm.addEventListener("submit", (e) => {
     e.preventDefault()
     sBoardMaxWidth = e.target.sBoardWidth.value
+    // NEED TO POPULATE SBOARDTHICKNESS FROM RECT WIDTH!!!
     sBoardThickness = e.target.sBoardThick.value
     bladeKerf = e.target.bladeKerf.value
     let inputColumns = parseInt(boardXDim)
@@ -165,10 +166,7 @@ sBoardForm.addEventListener("submit", (e) => {
         columnsAdjusted = inputColumns
         rowsAdjusted = inputRows
     }
-    // console.log(`inputColumns: ${inputColumns}`)
-    // console.log(`inputRows: ${inputRows}`)
-    // console.log(`columnsAdjusted: ${columnsAdjusted}`)
-    // console.log(`rowsAdjusted: ${rowsAdjusted}`)
+    // fill out source board non calculated info
     let wood1TableText = document.getElementById("wood1Table")
     wood1TableText.innerText = wood1Text.innerText
     let wood2TableText = document.getElementById("wood2Table")
@@ -181,9 +179,34 @@ sBoardForm.addEventListener("submit", (e) => {
     thickness1Table.innerText = sBoardThickness
     let thickness2Table = document.getElementById("thickness2Table")
     thickness2Table.innerText = sBoardThickness
+    // logic to calculate how many source board of given length are required to fit the strips needed
+    let wood1Strips = columnsAdjusted/2
+    let wood2Strips = columnsAdjusted/2
+    let wood1PlusKerf = wood1Strips + bladeKerf
+    let wood2PlusKerf = wood2Strips + bladeKerf
+    wood1SingleStripLength = rectHeight * rowsAdjusted + bladeKerf
+    wood2SingleStripLength = rectHeight * rowsAdjusted + bladeKerf
+    wood1CumStripLength = wood1SingleStripLength * wood1Strips
+    wood2CumStripLength = wood2SingleStripLength * wood2Strips
+    let wood1sBoardsToFitWidth = Math.ceil(((wood1Strips * wood1PlusKerf) / sBoardMaxWidth))
+    let wood2sBoardsToFitWidth = Math.ceil(((wood2Strips * wood2PlusKerf) / sBoardMaxWidth))
+    let sBoard1NumTable = document.getElementById("sBoard1NumTable")
+    let sBoard2NumTable = document.getElementById("sBoard2NumTable")
+    sBoard1NumTable.innerText = wood1sBoardsToFitWidth
+    sBoard2NumTable.innerText = wood2sBoardsToFitWidth
+    // logic to calculate total consecutive board length required
+    let crossCutKerf1 = rowsAdjusted * bladeKerf
+    let crossCutKerf2 = rowsAdjusted * bladeKerf
+    let totalConsecLength1 = wood1sBoardsToFitWidth * wood1SingleStripLength + crossCutKerf1
+    let totalConsecLength2 = wood2sBoardsToFitWidth * wood2SingleStripLength + crossCutKerf2
+    let totalConsecLength1Table = document.getElementById("totalConsecLength1Table")
+    let totalConsecLength2Table = document.getElementById("totalConsecLength2Table")
+    totalConsecLength1Table.innerText = totalConsecLength1
+    totalConsecLength2Table.innerText = totalConsecLength2
+
+
 
 })
-
 
 let radiusValue = 5 // default to give radius small round over cuz it's pretty
 

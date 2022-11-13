@@ -30,15 +30,15 @@
               <div class="form-group" id="rectDimensions">  
                 <p id="tableForm">
                   <label for="xDim" id="tableCell"><strong>Rect. width: </strong></label>
-                  <input type="number" name="rectWidth" placeholder="inches" min="0" step=".01" id="rectWidth"/><br/>
+                  <input type="number" name="rectWidth" placeholder="inches" min="0" step=".001" id="rectWidth"/><br/>
                 </p>
                 <p id="tableForm">
                   <label for="yDim" id="tableCell"><strong>Rect. height: </strong></label>
-                  <input type="number" name="rectHeight" placeholder="inches" min="0" step=".01" id="rectHeight"/><br/>
+                  <input type="number" name="rectHeight" placeholder="inches" min="0" step=".001" id="rectHeight"/><br/>
                 </p>
                 <p id="tableForm">
                   <label for="thickness" id="tableCell"><strong>Thickness: </strong></label>
-                  <input type="number" name="thickness" placeholder="inches" min="0" step=".01" id="thickness"/><br/>
+                  <input type="number" name="thickness" placeholder="inches" min="0" step=".001" id="thickness"/><br/>
                 </p>
               </div>
             <div class="dropdown">  
@@ -84,15 +84,15 @@
               <div class="form-group" id="rowsAndColumns">
                 <p id="tableForm">
                   <label for="sBoardThick" id="tableCell"><strong>Source Board Thickness: </strong></label>
-                  <input type="number" name="sBoardThick" placeholder="inches" min="0" step=".01" id="sBoardThick"/><br/>
+                  <input type="number" name="sBoardThick" placeholder="inches" min="0" step=".001" id="sBoardThick"/><br/>
                 </p>
                 <p id="tableForm">
                   <label for="sBoardWidth" id="tableCell"><strong>Source Board Max. Width: </strong></label>
-                  <input type="number" name="sBoardWidth" placeholder="inches" min="0" step=".01" id="sBoardWidth"/><br/>
+                  <input type="number" name="sBoardWidth" placeholder="inches" min="0" step=".001" id="sBoardWidth"/><br/>
                 </p>
                 <p id="tableForm">
                   <label for="bladeKerf" id="tableCell"><strong>Blade Width (Kerf): </strong></label>
-                  <input type="number" name="bladeKerf" placeholder="inches" min="0" step=".01" id="bladeKerf"/><br/>
+                  <input type="number" name="bladeKerf" placeholder="inches" min="0" step=".001" id="bladeKerf"/><br/>
                 </p>
               </div>
               <div id="source-board-div">
@@ -122,17 +122,17 @@
                   <tr>
                     <th scope="row">Board Thickness</th>
                     <td id="thickness1Table"></td>
-                    <td id="thickness2Table">Thornton</td>
+                    <td id="thickness2Table"></td>
                   </tr>
                   <tr>
                     <th scope="row">Board Length</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
+                    <td id="totalConsecLength1Table"></td>
+                    <td id="totalConsecLength2Table"></td>
                   </tr>
                   <tr>
                     <th scope="row">Number of Boards</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
+                    <td id="sBoard1NumTable"></td>
+                    <td id="sBoard2NumTable"></td>
                   </tr>
                 </tbody>
               </table>
