@@ -36,35 +36,33 @@ h6 {
     letter-spacing: 1px;
 }
 
+th {
+    font-size: 1rem;
+}
+
+label {
+    text-align: left;
+}
+
 #faceGrainTitle {
     margin-left: 15px;
 }
 
 .form-container {
     display: flex;
-    margin-left: 20px;
 }
 
 #rowsAndColumns {
     display: table;
 }
 
-#tableForm {
-    display: table-row;
-    font-family: "Monoton", Helvetica, sans-serif;
-}
-
-#tableCell {
-    display: table-cell;
-    width: flex;
-}
-
 #board-specs, #sBoard-specs, #purchaseRecs   {
     border: solid 2px #1E212B;
-    margin: 15px;
+    margin: 10px;
     padding: 10px;
     vertical-align: top;
     text-shadow: 2px 2px white;
+    flex-grow: 1;
 }
 
 #board-specs {
