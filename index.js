@@ -123,6 +123,8 @@ boardForm.addEventListener("submit", (e) => {
         alert("Please select a positive 'Columns' dimension")
     } else if (boardXDim % 2 === 1) { // make sure the board is not symmetric
         alert("'Columns' cannot be odd")
+    } else if (boardXDim > boardYDim) {
+        alert("'Columns' must be less than or equal to rows")
     } else if (wood1Text.innerText.length === 0) { // make sure wood types have been chosen
         if (wood2Text.innerText.length === 0) {
             alert("Please select your wood types")
@@ -134,38 +136,28 @@ boardForm.addEventListener("submit", (e) => {
     } else { 
     renderBoard(boardXDim, boardYDim) // if it passes all tests, render the board
     }
-  
 })
 
 // source board information
 let sBoardMaxWidth;
 let sBoardThickness;
 let bladeKerf;
-let purchaseRecs = document.getElementById("purchaseRecs")
 
 // WHEN YOU CHANGE THE BOARD DESIGN THE SOURCE BOARD INFO AND METERIAL RECS NEEDS TO UPDATE AS WELL!!
+// NEED TO ADD MORE LOGIC AROUND WARNINGS FOR THE LIMITS OF THE CALCULATOR
 let sBoardForm = document.getElementById("sBoard-specs")
 sBoardForm.addEventListener("submit", (e) => {
     e.preventDefault()
     sBoardMaxWidth = e.target.sBoardWidth.value
-    // NEED TO POPULATE SBOARDTHICKNESS FROM RECT WIDTH!!!
     sBoardThickness = e.target.sBoardThick.value
-    bladeKerf = e.target.bladeKerf.value
-    let inputColumns = parseInt(boardXDim)
-    let inputRows = parseInt(boardYDim)
-    let columnsAdjusted 
-    let rowsAdjusted
-    // adjust columns and rows
-    if (inputColumns < inputRows) {
-        columnsAdjusted = inputColumns
-        rowsAdjusted = inputRows
-    } else if (inputColumns > inputRows) {
-        columnsAdjusted = boardYDim
-        rowsAdjusted = inputColumns
-    } else if (inputColumns === inputRows) {
-        columnsAdjusted = inputColumns
-        rowsAdjusted = inputRows
+    if (sBoardThickness !== rectHeight) {
+        alert("The source board thickness must match the rect. height.")
     }
+    bladeKerf = e.target.bladeKerf.value
+    let columnsAdjusted = parseInt(boardXDim)
+    let rowsAdjusted = parseInt(boardYDim)
+    // MAKE IT CLEAR THAT YOU NEED TO RESUBMIT EVERYTHING FOR THE SOURCE MATERIAL TO RECALCULATE
+    // MAYBE HIDE THE SOURCE MATERIAL REC WHEN THE MAIN BOARD DESIGN IS SUBMITTED?
     // fill out source board non calculated info
     let wood1TableText = document.getElementById("wood1Table")
     wood1TableText.innerText = wood1Text.innerText
