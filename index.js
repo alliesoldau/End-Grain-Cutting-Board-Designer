@@ -5,7 +5,6 @@ let wood2Text = document.getElementById("wood2")
 let wood1Face;
 let wood2Face;
 
-
 // define endgrain image routes
 let maple = "images/maple-endgrain.jpg" // image source: https://woodgears.ca/wood_grain/hardwood.html
 let cherry = "images/cherry-endgrain.png" // image source: https://butcherblockco.com/product/boos-sample-cherry-end-grain
@@ -136,6 +135,9 @@ boardForm.addEventListener("submit", (e) => {
     } else { 
     renderBoard(boardXDim, boardYDim) // if it passes all tests, render the board
     }
+    // make the source board thickness a readonly value based on the rectangle height
+    let sourceBoardThickness = document.getElementById("sBoardThick")
+    sourceBoardThickness.placeholder = rectHeight
 })
 
 // source board information
@@ -143,16 +145,12 @@ let sBoardMaxWidth;
 let sBoardThickness;
 let bladeKerf;
 
-// WHEN YOU CHANGE THE BOARD DESIGN THE SOURCE BOARD INFO AND METERIAL RECS NEEDS TO UPDATE AS WELL!!
 // NEED TO ADD MORE LOGIC AROUND WARNINGS FOR THE LIMITS OF THE CALCULATOR
 let sBoardForm = document.getElementById("sBoard-specs")
 sBoardForm.addEventListener("submit", (e) => {
     e.preventDefault()
     sBoardMaxWidth = e.target.sBoardWidth.value
-    sBoardThickness = e.target.sBoardThick.value
-    if (sBoardThickness !== rectHeight) {
-        alert("The source board thickness must match the rect. height.")
-    }
+    sBoardThickness = rectHeight
     bladeKerf = e.target.bladeKerf.value
     let columnsAdjusted = parseInt(boardXDim)
     let rowsAdjusted = parseInt(boardYDim)

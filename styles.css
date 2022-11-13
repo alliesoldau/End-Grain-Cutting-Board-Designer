@@ -44,6 +44,15 @@ label {
     text-align: left;
 }
 
+.form-check {
+    padding: 0px;
+    margin-top: 15px;
+}
+
+#flexDiv {
+    display: block;
+}
+
 #faceGrainTitle {
     margin-left: 15px;
 }
@@ -56,27 +65,30 @@ label {
     display: table;
 }
 
-#board-specs, #sBoard-specs, #purchaseRecs   {
+#board-specs, #sBoard-specs, #purchaseRecs {
     border: solid 2px #1E212B;
     margin: 10px;
     padding: 10px;
     vertical-align: top;
     text-shadow: 2px 2px white;
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #board-specs {
     box-shadow: inset 0 0 0 1000px rgb(142, 202, 230, .2);
-    display: inline-block;
+    flex: 1 1 0px;
 }
 
 #sBoard-specs {
     box-shadow: inset 0 0 0 1000px rgb(77, 139, 49, .2);
-    display: inline-block;
+    flex: 1 1 0px;
 }
 
 #purchaseRecs {
     box-shadow: inset 0 0 0 1000px rgb(255, 200, 0, .2);
+    flex: 1.2 1 0px;
 }
 
 #dropdownMenuButton {
@@ -119,9 +131,14 @@ label {
     display: flex;
 }
 #source-board {
-    width: 400px; 
+    width: 90%; 
     height: auto;
     border: solid 1.5px #1E212B;
+    margin: 10px;
+}
+
+#sBoardThick, #sBoardWidth, #bladeKerf, #xDim, #yDim, #rectWidth, #rectHeight, #thickness, #sBoardThick {
+    width: 25%;
 }
 
 canvas {
