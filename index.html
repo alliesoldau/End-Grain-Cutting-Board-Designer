@@ -75,7 +75,7 @@
                 </label>
               </div>
               <br>
-              <div id="submitButtonWrapper">
+              <div id="buttonWrapper">
                 <button type="submit" class="submit-button">Submit</button>
               </div>
             </form>
@@ -104,7 +104,10 @@
               </div>
             </form>
             <div id="purchaseRecs">
+              <div id="print-content">
+                <form>
               <h4>Source Material Recommendation</h4>
+              <br>
               <table class="table">
                 <thead>
                   <tr>
@@ -137,6 +140,11 @@
                 </tbody>
               </table>
             </div>
+            <div id="buttonWrapper">
+              <input type="button" onclick="printDiv('print-content')" id="printButton" value="Print Recommendations"/>
+            </div>  
+          </form>
+        </div>   
     </div>
     <div class="form-container">
       <div id="bananaBoard">

@@ -51,6 +51,7 @@ h6 {
 
 #tableForm {
     display: table-row;
+    font-family: "Monoton", Helvetica, sans-serif;
 }
 
 #tableCell {
@@ -92,10 +93,20 @@ h6 {
     border-radius: 25%;
 }
 
-#submitButtomWrapper {
+/* the buttons' position on the page is not right */ 
+
+#printButton {
+    margin: 5px;
+    font-family: "Monoton", Helvetica, sans-serif;
+    letter-spacing: 1px;
+    background-color: #FFC800;
+    border-radius: 10px;
+}
+
+#buttonWrapper {
     position: relative;
-    bottom: 10px;
-    left: 10px;
+    bottom: 0px;
+    left: 0px;
 }
 
 .btn-secondary {

@@ -203,10 +203,16 @@ sBoardForm.addEventListener("submit", (e) => {
     let totalConsecLength2Table = document.getElementById("totalConsecLength2Table")
     totalConsecLength1Table.innerText = totalConsecLength1
     totalConsecLength2Table.innerText = totalConsecLength2
-
-
-
 })
+
+// add print functionality to the rec table
+function printDiv(divName) {
+    var printContents = document.getElementById(divName).innerHTML;
+    w=window.open();
+    w.document.write(printContents);
+    w.print();
+    w.close();
+}
 
 let radiusValue = 5 // default to give radius small round over cuz it's pretty
 
