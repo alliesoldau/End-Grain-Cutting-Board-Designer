@@ -16,6 +16,7 @@
   </header>
   <div class="form-container">
         <form id="board-specs">
+          <div id="flexBox">
           <div>
             <h4>Board Design</h4>
                 <div id="flexDiv">
@@ -27,18 +28,20 @@
                   <input type="number" name="yDim" id="yDim"/>
                 </div> 
                 <div id="flexDiv">
-                  <label for="xDim"><strong>Rect. width: </strong></label>
+                  <label for="xDim"><strong>Rectangle width: </strong></label>
                   <input type="number" name="rectWidth" placeholder="inches" min="0" step=".001" id="rectWidth"/>
                 </div>
                 <div id="flexDiv">
-                  <label for="yDim"><strong>Rect. height: </strong></label>
+                  <label for="yDim"><strong>Rectangle height: </strong></label>
                   <input type="number" name="rectHeight" placeholder="inches" min="0" step=".001" id="rectHeight"/>
                 </div>
                 <div id="flexDiv">
                   <label for="thickness"><strong>Thickness: </strong></label>
                   <input type="number" name="thickness" placeholder="inches" min="0" step=".001" id="thickness"/>
                 </div>
-            <div class="dropdown">  
+            <div id="rowsBox">
+              <div id="flexBox">
+              <div class="dropdown">  
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
                   1st wood type
                 </button>
@@ -70,7 +73,13 @@
                   <strong>Banana for scale?</strong>
                 </label>
               </div>
+              </div>
+              <div id="flexBox">
+                <img src="images/board-design-infoGraphic.png" id="boardDesignInfoGraphicImg"> <!-- image source: https://www.lowes.com/pd/Ruvati-Ruvati-17-x-16-x-2-in-thick-End-Grain-American-Walnut-and-Maple-Checkered-Butcher-Block-Solid-Wood-Cutting-Board-RVA2445CHK/5001962941 -->
+              </div>
             </div>
+          </div>
+          </div>
               <div id="buttonWrapper">
                 <button type="submit" class="submit-button">Submit</button>
               </div>
@@ -91,7 +100,7 @@
                   <input type="number" name="bladeKerf" placeholder="inches" min="0" step=".001" id="bladeKerf"/>
                 </div>
               <div id="source-board-div">
-                <img src="images/sourceBoard-infoGraphic.png" id="source-board"> <!-- image source: https://www.acehardware.com/departments/building-supplies/lumber-and-trim/lumber/5072327?store=07874&gclid=Cj0KCQiApb2bBhDYARIsAChHC9vq9RT1C6DKRXMGbqkBafMJ8js-XmAu7mJq49gYhYdi6SJzDnhFeFYaAoHZEALw_wcB&gclsrc=aw.ds -->
+                <img src="images/sourceBoard-infoGraphic.png" id="source-board"> <!-- image source: https://www.baillie.com/hardwood-lumber-blog/item/374-hardwood-lumber-board-feet -->
               </div>
             </div>
               <div id="buttonWrapper">
