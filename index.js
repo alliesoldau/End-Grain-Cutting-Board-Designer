@@ -155,6 +155,9 @@ sBoardForm.addEventListener("submit", (e) => {
     bladeKerf = e.target.bladeKerf.value
     let columnsAdjusted = parseInt(boardXDim)
     let rowsAdjusted = parseInt(boardYDim)
+    console.log(`sBoardMaxWidth: ${sBoardMaxWidth}`)
+    console.log(`sBoardThickness: ${sBoardThickness}`)
+    console.log(`bladeKerf: ${bladeKerf}`)
     // MAKE IT CLEAR THAT YOU NEED TO RESUBMIT EVERYTHING FOR THE SOURCE MATERIAL TO RECALCULATE
     // MAYBE HIDE THE SOURCE MATERIAL REC WHEN THE MAIN BOARD DESIGN IS SUBMITTED?
     // fill out source board non calculated info
@@ -173,18 +176,28 @@ sBoardForm.addEventListener("submit", (e) => {
     // logic to calculate how many source board of given length are required to fit the strips needed
     let wood1Strips = columnsAdjusted/2
     let wood2Strips = columnsAdjusted/2
-    let wood1PlusKerf = wood1Strips + bladeKerf
-    let wood2PlusKerf = wood2Strips + bladeKerf
+    // console.log(`thickness: ${thickness}`)
+    // console.log(`wood1Strips: ${wood1Strips}`)
+    let wood1PlusKerf = thickness + bladeKerf
+    let wood2PlusKerf = thickness + bladeKerf
+    // console.log(`wood1PlusKerf: ${wood1PlusKerf}`)
     wood1SingleStripLength = rectHeight * rowsAdjusted + bladeKerf
     wood2SingleStripLength = rectHeight * rowsAdjusted + bladeKerf
+    // console.log(`wood1SingleStripLength: ${wood1SingleStripLength}`)
     wood1CumStripLength = wood1SingleStripLength * wood1Strips
     wood2CumStripLength = wood2SingleStripLength * wood2Strips
+    // console.log(`wood1CumStripLength: ${wood1CumStripLength}`)
     let wood1sBoardsToFitWidth = Math.ceil(((wood1Strips * wood1PlusKerf) / sBoardMaxWidth))
     let wood2sBoardsToFitWidth = Math.ceil(((wood2Strips * wood2PlusKerf) / sBoardMaxWidth))
+    // console.log(`wood1Strips * wood1PlusKerf: ${wood1Strips * wood1PlusKerf}`)
+    // console.log(`wood1Strips * wood1PlusKerf) / sBoardMaxWidth: ${((wood1Strips * wood1PlusKerf) / sBoardMaxWidth)}`)
+    // console.log(`Math.ceil(((wood1Strips * wood1PlusKerf) / sBoardMaxWidth)): ${Math.ceil(((wood1Strips * wood1PlusKerf) / sBoardMaxWidth))}`)
+    // console.log(`wood1sBoardsToFitWidth: ${wood1sBoardsToFitWidth}`)
     let sBoard1NumTable = document.getElementById("sBoard1NumTable")
     let sBoard2NumTable = document.getElementById("sBoard2NumTable")
     sBoard1NumTable.innerText = wood1sBoardsToFitWidth
     sBoard2NumTable.innerText = wood2sBoardsToFitWidth
+    // console.log(`sBoard1NumTable: ${sBoard1NumTable.innerText}`)
     // logic to calculate total consecutive board length required
     let crossCutKerf1 = rowsAdjusted * bladeKerf
     let crossCutKerf2 = rowsAdjusted * bladeKerf
