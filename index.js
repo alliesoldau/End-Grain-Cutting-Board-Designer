@@ -105,8 +105,6 @@ boardForm.addEventListener("submit", (e) => {
     boardYDim = parseInt(e.target.yDim.value)
     thickness = e.target.thickness.value // this will get passed into the thickness render maker
     // THE DEAULT VALUE ISNT WORKING. HOW CAN I MAKE IT DEFAULT TO 1 W/O HAVING THE CLICK IN THE FEILD??
-    console.log(`boardXDim: ${boardXDim}`)
-    console.log(`boardYDim: ${boardYDim}`)
     if (rectWidth !== "") {
     rectWidth = e.target.rectWidth.value
     } else {
