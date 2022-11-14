@@ -28,6 +28,8 @@ h3 {
 h4 {
     font-family: "Monoton", Helvetica, sans-serif;
     letter-spacing: 1px;
+    text-shadow: 2px 2px white;
+
 }
 
 h6 {
@@ -72,7 +74,6 @@ label {
     margin: 10px;
     padding: 10px;
     vertical-align: top;
-    text-shadow: 2px 2px white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -101,7 +102,7 @@ label {
 
 #dropdownMenuButton {
     margin: 5px;
-    padding: 10px;
+    width: 90%;
 }
 
 .submit-button, #printButton {
@@ -153,7 +154,7 @@ label {
 }
 
 #sBoardThick, #sBoardWidth, #bladeKerf, #xDim, #yDim, #rectWidth, #rectHeight, #thickness, #sBoardThickness {
-    width: 25%;
+    width: auto;
     border-radius: 2.5px;
     margin: 0.125em;
 }
