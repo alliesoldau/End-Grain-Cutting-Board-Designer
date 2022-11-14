@@ -101,10 +101,12 @@ let boardForm = document.getElementById("board-specs")
 boardForm.addEventListener("submit", (e) => {
     e.preventDefault()
     // TODO: UPON SUBMIT RESET WHATEVER WAS IN THE BOARD RENDER AND THEN RESHOW IT IN THE RENDER
-    boardXDim = e.target.xDim.value
-    boardYDim = e.target.yDim.value
+    boardXDim = parseInt(e.target.xDim.value)
+    boardYDim = parseInt(e.target.yDim.value)
     thickness = e.target.thickness.value // this will get passed into the thickness render maker
     // THE DEAULT VALUE ISNT WORKING. HOW CAN I MAKE IT DEFAULT TO 1 W/O HAVING THE CLICK IN THE FEILD??
+    console.log(`boardXDim: ${boardXDim}`)
+    console.log(`boardYDim: ${boardYDim}`)
     if (rectWidth !== "") {
     rectWidth = e.target.rectWidth.value
     } else {
