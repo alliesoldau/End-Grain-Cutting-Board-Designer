@@ -135,9 +135,7 @@ label {
 }
 
 #boardDesignInfoGraphicImg {
-    width: 100%;
-    border: solid 2px #8ECAE6;
-    border-radius: 5px;
+    width: 90%;
     margin: 5px;
 }
 
