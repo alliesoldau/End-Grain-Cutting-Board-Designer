@@ -1,6 +1,6 @@
 # End Grain Cutting Board Generator
 
-[Site Link]("https://alliesoldau.github.io/Sandbox/index.html")
+[Site Link](https://alliesoldau.github.io/Sandbox/index.html)
 
 My fiance and I enjoy designing and building end grain cutting boards. The most frustrating part of the process has always been purchasing the right amount (and dimensions) of lumber to create what we want while limiting waste.
 
