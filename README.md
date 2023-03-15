@@ -1,6 +1,6 @@
 # End Grain Cutting Board Designer
 
-## [Site Link](https://alliesoldau.github.io/Sandbox/index.html) ##
+## [Site Link](https://alliesoldau.github.io/End-Grain-Cutting-Board-Designer/) ##
 
 ## [Demo Link](https://youtu.be/NotJvmUfZRI) ##
 
