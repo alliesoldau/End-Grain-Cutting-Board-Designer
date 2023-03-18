@@ -1,8 +1,6 @@
-# End Grain Cutting Board Designer
+# 🔪 End Grain Cutting Board Designer
 
-## [Site Link](https://alliesoldau.github.io/End-Grain-Cutting-Board-Designer/) ##
-
-## [Demo Link](https://youtu.be/NotJvmUfZRI) ##
+[Site](https://alliesoldau.github.io/End-Grain-Cutting-Board-Designer/) [Demo Link](https://youtu.be/NotJvmUfZRI)
 
 My fiance and I enjoy designing and building end grain cutting boards. The most frustrating part of the process has always been purchasing the right amount (and dimensions) of lumber to create what we want while limiting waste.
 
