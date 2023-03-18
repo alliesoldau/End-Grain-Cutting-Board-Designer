@@ -12,7 +12,7 @@ This site helps woodworkers to design checker pattern end grain cutting boards, 
 
 For an added challenge I built this all in Vanilla JavaScript to gain a deeper understanding of the language without relying on the library offered by React. I am hosting it on GitHub Pages.
 
-### App Utilization: ###
+## 🧑 User story:
 * Input your board dimensions and wood choices into the Board Design Form
   * Click _Submit_ to generate a **visual representation** of the board from a top-view and a side-view
   * Selecting _Banana for scale?_ will superimpose a to-scale banana on the board to demonstrate the size of the board
